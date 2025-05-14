@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    
+    "module": "NodeNext",
+    "target": "ES2020",
+    "moduleResolution": "NodeNext",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "build",
+    "types": ["jest"],
+    "allowSyntheticDefaultImports": true                    
+  },
+  "exclude": ["node_modules/"],
+  "include": ["src/**/*.ts", "test/**/*.ts", "src/lib/OctokitLib.ts"]
+}

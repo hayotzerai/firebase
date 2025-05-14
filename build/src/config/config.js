@@ -1,0 +1,30 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.githubOrg = exports.githubToken = exports.openaiConfig = exports.firebaseConfig = exports.SERVER = exports.SERVER_PORT = exports.SERVER_HOSTNAME = exports.TEST = exports.DEVELOPMENT = void 0;
+const dotenv_1 = __importDefault(require("dotenv"));
+dotenv_1.default.config();
+exports.DEVELOPMENT = process.env.NODE_ENV === "developemnet";
+exports.TEST = process.env.NODE_ENV === "test";
+exports.SERVER_HOSTNAME = process.env.SERVER_HOSTNAME || 'localhost';
+exports.SERVER_PORT = process.env.SERVER_PORT ? Number(process.env.SERVER_PORT) : 3311;
+exports.SERVER = {
+    SERVER_HOSTNAME: exports.SERVER_HOSTNAME,
+    SERVER_PORT: exports.SERVER_PORT
+};
+exports.firebaseConfig = {
+    apiKey: process.env.apiKey,
+    authDomain: process.env.authDomain,
+    projectId: process.env.projectId,
+    storageBucket: process.env.storageBucket,
+    messagingSenderId: process.env.messagingSenderId,
+    appId: process.env.appId,
+    measurementId: process.env.measurementId
+};
+exports.openaiConfig = {
+    apiKey: process.env.OPENAI_API_KEY
+};
+exports.githubToken = process.env.GITHUB_TOKEN;
+exports.githubOrg = process.env.LANDING_PAGE_REPO_NAME;
